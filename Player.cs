@@ -1,22 +1,56 @@
-using System;
+using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 
-public class Player
+class Player : Entity
 {
-    public int Health { get; set; }
-    private IPlayerStrategy _strategy;
+    // -- Singleton -- //
+    private static Player? instance;
 
-    public Player(int health)
+    private Vector2i direction = new Vector2i(0, 0);
+
+    private Player(Vector2i? position = null, ConsoleColor color = ConsoleColor.Green)
+    : base('☺', position, color)
     {
-        Health = health;
+        
     }
 
-    public void SetStrategy(IPlayerStrategy strategy)
+    public static Player GetInstance(Vector2i? position = null, ConsoleColor color = ConsoleColor.Green)
     {
-        _strategy = strategy;
+        if (instance == null)
+        {
+            instance = new Player(position, color);
+        }
+        return instance;
     }
 
-    public void ExecuteStrategy(Enemy enemy)
+    /// <summary>
+    /// Called every game loop.
+    /// </summary>
+    public override void Update()
     {
-        _strategy.Execute(this, enemy);
+        var key = Console.ReadKey(true);
+        KeyAction(key);
+        position += direction;
+    }
+
+    private void KeyAction(ConsoleKeyInfo key)
+    {
+        switch (key.Key)
+        {
+            case ConsoleKey.UpArrow: direction = new Vector2i(0, -1); break;
+            case ConsoleKey.RightArrow: direction = new Vector2i(1, 0); break;
+            case ConsoleKey.DownArrow: direction = new Vector2i(0, 1); break;
+            case ConsoleKey.LeftArrow: direction = new Vector2i(-1, 0); break;
+        }
+    }
+
+    public void LevelUp()
+    {
+        this.level++;
+    }
+
+    public void LevelUp(int levelIncrease)
+    {
+        this.level += levelIncrease;
     }
 }

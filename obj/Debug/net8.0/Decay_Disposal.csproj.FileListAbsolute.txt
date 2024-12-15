@@ -1,0 +1,14 @@
+C:\Kuliah\OOP\Decay_Disposal\bin\Debug\net8.0\Decay_Disposal.exe
+C:\Kuliah\OOP\Decay_Disposal\bin\Debug\net8.0\Decay_Disposal.deps.json
+C:\Kuliah\OOP\Decay_Disposal\bin\Debug\net8.0\Decay_Disposal.runtimeconfig.json
+C:\Kuliah\OOP\Decay_Disposal\bin\Debug\net8.0\Decay_Disposal.dll
+C:\Kuliah\OOP\Decay_Disposal\bin\Debug\net8.0\Decay_Disposal.pdb
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.AssemblyInfoInputs.cache
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.AssemblyInfo.cs
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.csproj.CoreCompileInputs.cache
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.dll
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\refint\Decay_Disposal.dll
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.pdb
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\Decay_Disposal.genruntimeconfig.cache
+C:\Kuliah\OOP\Decay_Disposal\obj\Debug\net8.0\ref\Decay_Disposal.dll

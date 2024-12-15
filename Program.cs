@@ -1,57 +1,28 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Player player = new Player(health: 100);
-        Enemy enemy = new Enemy(health: 50);
+        var test = new Room(10, 15);
+        Player player = Player.GetInstance(new Vector2i(10, 4));
 
-        while (player.Health > 0 && enemy.Health > 0)
+        Entity entity = new Entity('$', new Vector2i(3, 3), ConsoleColor.Yellow);
+
+        Entity yea = new Entity('A', new Vector2i(5, 3), ConsoleColor.Blue);
+        Entity yo = new Entity('A', new Vector2i(5, 10), ConsoleColor.Blue);
+
+        Console.Clear();
+        Console.CursorVisible = false;
+        while (true)
         {
-            Console.WriteLine("\n--- Pertarungan Dimulai ---");
-            Console.WriteLine($"Pemain HP: {player.Health} | Musuh HP: {enemy.Health}");
+            test.Display();
             
-            Console.WriteLine("Pilih aksi:");
-            Console.WriteLine("1. Serangan Biasa");
-            Console.WriteLine("2. Serangan Kuat");
-            Console.WriteLine("3. Bertahan");
-            Console.Write("Pilihan: ");
+            Entity.DrawAll();
             
-            string choice = Console.ReadLine();
-
-            switch (choice)
-            {
-                case "1":
-                    player.SetStrategy(new NormalAttack());
-                    break;
-                case "2":
-                    player.SetStrategy(new StrongAttack());
-                    break;
-                case "3":
-                    player.SetStrategy(new Defend());
-                    break;
-                default:
-                    Console.WriteLine("Pilihan tidak valid, kamu melewatkan giliran!");
-                    continue;
-            }
-
-            player.ExecuteStrategy(enemy);
-
-            if (enemy.Health > 0)
-            {
-                enemy.Attack(player);
-            }
-        }
-
-        Console.WriteLine("\n--- Pertarungan Selesai ---");
-        if (player.Health > 0)
-        {
-            Console.WriteLine("Selamat! Kamu menang.");
-        }
-        else
-        {
-            Console.WriteLine("Kamu kalah. Coba lagi!");
+            Entity.UpdateAll();
         }
     }
 }
